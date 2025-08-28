@@ -17,3 +17,14 @@ const clickMe = () => {
   btn.style.margin = "10px";
   btn.style.fontWeight = "bold";
 };
+function clickMe() {
+  alert("Button clicked! Welcome to Muhammad Munsif's website.");
+}
+
+// Mobile menu toggle
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector("#nav-menu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});

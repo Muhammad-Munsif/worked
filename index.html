@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muhammad Munsif - Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
       /* Base styles and CSS reset */
       * {
@@ -177,10 +181,41 @@
         transform: translateY(-5px);
       }
 
-      .service-card i {
+      .service-icon {
         font-size: 2.5rem;
         color: #6e8efb;
         margin-bottom: 1rem;
+        display: block;
+      }
+
+      /* Skills section */
+      .skills {
+        background-color: white;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .skill-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+        transition: all 0.3s;
+      }
+
+      .skill-item:hover {
+        background: #e9ecef;
+        transform: translateY(-3px);
+      }
+
+      .skill-icon {
+        font-size: 2rem;
+        color: #a777e3;
+        margin-bottom: 0.8rem;
       }
 
       /* Footer styles */
@@ -216,6 +251,30 @@
         width: 50px;
         height: 2px;
         background-color: #a777e3;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .social-icons a:hover {
+        background: #a777e3;
+        transform: translateY(-3px);
       }
 
       .footer-bottom {
@@ -277,6 +336,11 @@
         .hero p {
           font-size: 1rem;
         }
+
+        .services-grid,
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -284,13 +348,24 @@
     <header>
       <div class="container header-content">
         <div class="logo">Munsif</div>
-        <button class="hamburger">☰</button>
+        <button class="hamburger"><i class="fas fa-bars"></i></button>
         <nav>
           <ul id="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="#home"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
+              <a href="#about"><i class="fas fa-user"></i> About</a>
+            </li>
+            <li>
+              <a href="#services"><i class="fas fa-cog"></i> Services</a>
+            </li>
+            <li>
+              <a href="#skills"><i class="fas fa-lightbulb"></i> Skills</a>
+            </li>
+            <li>
+              <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -306,7 +381,9 @@
             ipsum at dicta doloribus quia, est nulla, illo odit voluptatum.
             Omnis deserunt dolor dolores!
           </p>
-          <button id="btn" onclick="clickMe()">Click Me</button>
+          <button id="btn" onclick="clickMe()">
+            <i class="fas fa-hand-pointer"></i> Click Me
+          </button>
         </section>
 
         <section id="about">
@@ -328,7 +405,7 @@
             </div>
             <div class="about-image">
               <img
-                src="https://via.placeholder.com/400x300"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
                 alt="Muhammad Munsif"
               />
             </div>
@@ -339,7 +416,7 @@
           <h2 class="section-title">My Services</h2>
           <div class="services-grid">
             <div class="service-card">
-              <i>💻</i>
+              <i class="fas fa-laptop-code service-icon"></i>
               <h3>Web Development</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -347,7 +424,7 @@
               </p>
             </div>
             <div class="service-card">
-              <i>🎨</i>
+              <i class="fas fa-palette service-icon"></i>
               <h3>UI/UX Design</h3>
               <p>
                 Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor
@@ -355,7 +432,7 @@
               </p>
             </div>
             <div class="service-card">
-              <i>📱</i>
+              <i class="fas fa-mobile-alt service-icon"></i>
               <h3>App Development</h3>
               <p>
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -364,10 +441,36 @@
             </div>
           </div>
         </section>
+
+        <section id="skills" class="skills">
+          <h2 class="section-title">My Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fab fa-html5 skill-icon"></i>
+              <h3>HTML5</h3>
+              <p>Advanced level</p>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-css3-alt skill-icon"></i>
+              <h3>CSS3</h3>
+              <p>Advanced level</p>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-js skill-icon"></i>
+              <h3>JavaScript</h3>
+              <p>Intermediate level</p>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-react skill-icon"></i>
+              <h3>React</h3>
+              <p>Intermediate level</p>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
-    <footer>
+    <footer id="contact">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
@@ -379,13 +482,22 @@
           </div>
           <div class="footer-section">
             <h3>Contact Info</h3>
-            <p>Email: info@munsif.com</p>
-            <p>Phone: +123 456 7890</p>
-            <p>Address: 123 Main St, City, Country</p>
+            <p><i class="fas fa-envelope"></i> Email: info@munsif.com</p>
+            <p><i class="fas fa-phone"></i> Phone: +123 456 7890</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Address: 123 Main St, City,
+              Country
+            </p>
           </div>
           <div class="footer-section">
             <h3>Follow Me</h3>
-            <p>LinkedIn | Twitter | GitHub</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </div>
         <div class="footer-bottom">
@@ -394,18 +506,6 @@
       </div>
     </footer>
 
-    <script>
-      function clickMe() {
-        alert("Button clicked! Welcome to Muhammad Munsif's website.");
-      }
-
-      // Mobile menu toggle
-      const hamburger = document.querySelector(".hamburger");
-      const navMenu = document.querySelector("#nav-menu");
-
-      hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-      });
-    </script>
+    <script src="js/index.js"></script>
   </body>
 </html>
